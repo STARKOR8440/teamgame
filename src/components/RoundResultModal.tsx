@@ -19,7 +19,8 @@ export const RoundResultModal: React.FC<Props> = ({
   onGoPodium,
 }) => {
   const sorted = Object.values(room.players).sort((a, b) => b.currentScore - a.currentScore);
-  const hasNextInPlaylist = room.playlist.length > 0 && room.currentIndex + 1 < room.playlist.length;
+  const playlist = room.playlist ?? [];
+  const hasNextInPlaylist = playlist.length > 0 && room.currentIndex + 1 < playlist.length;
 
   return (
     <div className="min-h-screen bg-[#0d0e12] px-5 py-8 flex flex-col justify-between">

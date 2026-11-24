@@ -56,6 +56,7 @@ export const GameSelectScreen: React.FC<Props> = ({
   const [queueMode, setQueueMode] = useState(false);
   const [copied, setCopied] = useState(false);
 
+  const playlist = room.playlist ?? [];
   const playersList = Object.values(room.players);
   const filteredGames = GAMES_CATALOG.filter((g) => (filter === 'all' ? true : g.category === filter));
 
@@ -144,7 +145,7 @@ export const GameSelectScreen: React.FC<Props> = ({
                 }`}
               >
                 <ListOrdered className="w-3.5 h-3.5" />
-                순서 짜기 {room.playlist.length > 0 && `(${room.playlist.length})`}
+                순서 짜기 {playlist.length > 0 && `(${playlist.length})`}
               </button>
             )}
 
@@ -206,7 +207,7 @@ export const GameSelectScreen: React.FC<Props> = ({
       <main className="px-4 pt-3 grid grid-cols-2 gap-3">
         {filteredGames.map((game) => {
           const style = ACCENT_STYLES[game.accent];
-          const queueIdx = room.playlist.indexOf(game.id);
+          const queueIdx = playlist.indexOf(game.id);
           const isQueued = queueIdx !== -1;
 
           return (
@@ -244,14 +245,14 @@ export const GameSelectScreen: React.FC<Props> = ({
       </main>
 
       {/* 순서 짜기 하단 플로팅 실행 바 */}
-      {me.isHost && room.playlist.length > 0 && (
+      {me.isHost && playlist.length > 0 && (
         <div className="fixed bottom-4 inset-x-4 z-30">
           <button
             onClick={onStartPlaylist}
             className="w-full py-4 rounded-2xl bg-yellow-400 text-black font-black text-base shadow-2xl shadow-yellow-400/30 flex items-center justify-center gap-2"
           >
             <Play className="w-5 h-5 fill-black" />
-            선택한 {room.playlist.length}개 게임 연속 시작하기
+            선택한 {playlist.length}개 게임 연속 시작하기
           </button>
         </div>
       )}

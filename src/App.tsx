@@ -85,10 +85,11 @@ export function App() {
           updateRoom(room.roomCode, { playlist: next });
         }}
         onStartPlaylist={() => {
-          if (room.playlist.length === 0) return;
-          updateRoom(room.roomCode, { currentIndex: 0 });
-          openGameBriefing(room.roomCode, room.playlist[0], room.players);
-        }}
+  const playlist = room.playlist ?? [];
+  if (playlist.length === 0) return;
+  updateRoom(room.roomCode, { currentIndex: 0 });
+  openGameBriefing(room.roomCode, playlist[0], room.players);
+}}
         onToggleMode={() => updateRoom(room.roomCode, { mode: room.mode === 'solo' ? 'team' : 'solo' })}
         onToggleMatchType={() =>
           updateRoom(room.roomCode, { matchType: room.matchType === 'olympic' ? 'single' : 'olympic' })
@@ -143,12 +144,13 @@ export function App() {
         room={room}
         me={me}
         onNextGame={() => {
-          const nextIdx = room.currentIndex + 1;
-          const nextGameId = room.playlist[nextIdx];
-          if (!nextGameId) return;
-          updateRoom(room.roomCode, { currentIndex: nextIdx });
-          openGameBriefing(room.roomCode, nextGameId, room.players);
-        }}
+  const playlist = room.playlist ?? [];
+  const nextIdx = room.currentIndex + 1;
+  const nextGameId = playlist[nextIdx];
+  if (!nextGameId) return;
+  updateRoom(room.roomCode, { currentIndex: nextIdx });
+  openGameBriefing(room.roomCode, nextGameId, room.players);
+}}
         onBackToSelect={() => updateRoom(room.roomCode, { phase: 'select', activeGameId: null })}
         onGoPodium={() => updateRoom(room.roomCode, { phase: 'podium' })}
       />
