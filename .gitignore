@@ -1,0 +1,17 @@
+# 의존성 및 빌드 산출물
+node_modules
+dist
+dist-ssr
+*.local
+
+# 환경 변수 (Firebase 키 등 비밀값 보호)
+.env
+.env.*
+!.env.example
+
+# 에디터 및 로그
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+*.log

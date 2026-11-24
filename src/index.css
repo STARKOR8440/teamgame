@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #0d0e12;
+    color: #f4f4f6;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    overflow-x: hidden;
+  }
+}
+
+/* 아케이드 네온 글로우 유틸리티 */
+.neon-border-yellow {
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.35), inset 0 0 8px rgba(250, 204, 21, 0.15);
+}
+.neon-border-pink {
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.35), inset 0 0 8px rgba(244, 63, 94, 0.15);
+}
+.neon-border-cyan {
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.35), inset 0 0 8px rgba(34, 211, 238, 0.15);
+}
