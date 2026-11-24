@@ -10,8 +10,8 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: '송년 오락실 - 모바일 파티 게임',
-        short_name: '송년 오락실',
+        name: '모두의 오락실 - 모바일 파티 게임',
+        short_name: '모두의 오락실',
         description: '모바일로 지인들과 함께 즐기는 실시간 레크리에이션 오락실',
         theme_color: '#0d0e12',
         background_color: '#0d0e12',

@@ -38,7 +38,7 @@ export const LobbyScreen: React.FC<Props> = ({ onCreateRoom, onJoinRoom, errorMs
             <div className="w-11 h-11 rounded-2xl bg-yellow-400 text-black flex items-center justify-center shadow-lg shadow-yellow-400/20">
               <Gamepad2 className="w-7 h-7" />
             </div>
-            <h1 className="text-3xl font-black tracking-tight text-white">송년 오락실</h1>
+            <h1 className="text-3xl font-black tracking-tight text-white">모두의 오락실</h1>
           </div>
           <p className="text-zinc-400 text-sm">별도 호스트 화면 없이 각자 스마트폰으로 함께 즐기세요!</p>
         </div>

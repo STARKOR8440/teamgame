@@ -84,7 +84,7 @@ export const GameSelectScreen: React.FC<Props> = ({
             <div className="w-8 h-8 rounded-xl bg-yellow-400 text-black flex items-center justify-center">
               <Gamepad2 className="w-5 h-5" />
             </div>
-            <span className="font-black text-lg text-white">송년 오락실</span>
+            <span className="font-black text-lg text-white">모두의 오락실</span>
             <span className="px-2 py-0.5 rounded-md bg-yellow-400/15 text-yellow-300 text-xs font-bold">
               게임 선택
             </span>
