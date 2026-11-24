@@ -13,23 +13,25 @@ export const CountdownScreen: React.FC<Props> = ({ room, me, game, onCountdownDo
 
   useEffect(() => {
     const startAt = room.countdownStartTime || Date.now();
-    let triggered = false;
+    let done = false;
 
-    const timer = window.setInterval(() => {
+    const tick = () => {
       const elapsedSec = (Date.now() - startAt) / 1000;
-      const remaining = Math.ceil(3 - elapsedSec);
+      const remain = Math.ceil(3 - elapsedSec);
 
-      if (remaining > 0) {
-        setCount(Math.min(3, remaining));
-      } else if (!triggered) {
-        triggered = true;
-        clearInterval(timer);
+      if (remain > 0) {
+        setCount(Math.min(3, remain));
+      } else if (!done) {
+        done = true;
+        setCount(0);
         if (me.isHost) {
           onCountdownDone();
         }
       }
-    }, 50);
+    };
 
+    tick();
+    const timer = window.setInterval(tick, 50);
     return () => clearInterval(timer);
   }, [room.countdownStartTime, me.isHost, onCountdownDone]);
 
@@ -40,11 +42,13 @@ export const CountdownScreen: React.FC<Props> = ({ room, me, game, onCountdownDo
 
       <div className="w-36 h-36 rounded-full bg-yellow-400/15 border-4 border-yellow-400 flex items-center justify-center shadow-[0_0_40px_rgba(250,204,21,0.35)]">
         <span key={count} className="text-7xl font-black text-yellow-300 animate-bounce">
-          {count}
+          {count > 0 ? count : 'GO!'}
         </span>
       </div>
 
-      <p className="mt-6 text-sm font-bold text-zinc-400">잠시 후 게임이 시작됩니다!</p>
+      <p className="mt-6 text-sm font-bold text-zinc-400">
+        3초 후 게임이 시작됩니다!
+      </p>
     </div>
   );
 };
