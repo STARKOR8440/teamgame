@@ -17,14 +17,13 @@ import {
 interface Props {
   room: RoomState;
   me: Player;
+  onUpdateMode?: (mode: 'solo' | 'team') => void;
+  onUpdateMatchType?: (matchType: 'single' | 'olympic') => void;
+  onUpdatePlaylist?: (playlist: string[]) => void;
   onStartSingleGame: (gameId: string) => void;
-  onTogglePlaylistGame: (gameId: string) => void;
   onStartPlaylist: () => void;
-  onToggleMode: () => void;
-  onToggleMatchType: () => void;
-  onOpenPodium: () => void;
   onAddBots: () => void;
-  onSwitchTeam: (playerId: string) => void;
+  onLeaveRoom: () => void;
 }
 
 const ACCENT_STYLES: Record<AccentColor, { top: string; badge: string }> = {

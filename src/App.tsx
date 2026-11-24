@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { CountdownScreen } from './components/CountdownScreen';
 import { GameBriefingScreen } from './components/GameBriefingScreen';
 import { GamePlayShell } from './components/GamePlayShell';
-import { GameRouter } from './components/GameRouter';
+import { GameRouter } from "./components/GameRouter";
 import { GameSelectScreen } from './components/GameSelectScreen';
 import { LobbyScreen } from './components/LobbyScreen';
 import { PodiumScreen } from './components/PodiumScreen';

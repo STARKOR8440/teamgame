@@ -4,12 +4,12 @@ import { TimingSensorGames } from './TimingSensorGames';
 import { ActionArcadeGames } from './ActionArcadeGames';
 import { BrainQuizGames } from './BrainQuizGames';
 
-interface GameProps {
+interface GameRouterProps {
   gameId: string;
   onScoreChange: (score: number) => void;
 }
 
-export const GameRouter: React.FC<GameProps> = ({ gameId, onScoreChange }) => {
+export const GameRouter: React.FC<GameRouterProps> = ({ gameId, onScoreChange }) => {
   if (['tap-king', 'shake-it', 'rub-rub', 'whack-mole', 'piano-tiles'].includes(gameId)) {
     return <QuickTapGames gameId={gameId} onScoreChange={onScoreChange} />;
   }

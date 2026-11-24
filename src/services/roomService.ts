@@ -1,6 +1,6 @@
 import { get, onValue, ref, set, update } from 'firebase/database';
 import { GAMES_CATALOG } from '../data/gamesCatalog';
-import { db } from '../firebase';
+import { db } from 'firebase';
 import type { MiniGameMeta, Player, RoomState } from '../types/game';
 
 const DEFAULT_FALLBACK_GAME: MiniGameMeta = {
