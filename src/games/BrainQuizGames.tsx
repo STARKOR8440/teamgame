@@ -13,12 +13,6 @@ const CHOSEONG_BANK = [
   { cho: 'ㅎㄴㅂ', ans: '하늘별' },
 ];
 
-const TRIVIA_BANK = [
-  { q: '대한민국의 수도는 서울이다. (O/X)', choices: ['O', 'X'], ans: 'O' },
-  { q: '지구에서 가장 큰 바다는 태평양이다.', choices: ['태평양', '대서양', '인도양', '북극해'], ans: '태평양' },
-  { q: '빛의 속도는 소리보다 빠르다.', choices: ['맞다', '틀리다'], ans: '맞다' },
-  { q: '1년 중 30일까지 있는 달은?', choices: ['2월', '4월', '7월', '12월'], ans: '4월' },
-];
 
 export const BrainQuizGames: React.FC<Props> = ({ gameId, onScoreChange }) => {
   const scoreRef = useRef(0);
@@ -356,23 +350,4 @@ export const BrainQuizGames: React.FC<Props> = ({ gameId, onScoreChange }) => {
       </div>
     );
   }
-
-  // 27. 상식 퀴즈
-  const qItem = TRIVIA_BANK[tick % TRIVIA_BANK.length];
-  return (
-    <div className="flex-1 flex flex-col items-center justify-center p-6 gap-5 text-center">
-      <div className="text-lg font-black text-white">{qItem.q}</div>
-      <div className="grid grid-cols-2 gap-3 w-full max-w-xs">
-        {qItem.choices.map((c) => (
-          <button
-            key={c}
-            onClick={() => addScore(c === qItem.ans ? 20 : -10)}
-            className="py-3.5 rounded-xl bg-amber-500 text-black font-black"
-          >
-            {c}
-          </button>
-        ))}
-      </div>
-    </div>
-  );
 };

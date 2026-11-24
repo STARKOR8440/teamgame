@@ -179,7 +179,7 @@ export const GameSelectScreen: React.FC<Props> = ({
           {[
             { key: 'all', label: `전체 (${GAMES_CATALOG.length})` },
             { key: 'fast', label: '⚡ 빠르게 (16)' },
-            { key: 'brain', label: '🧠 생각해 (11)' },
+            { key: 'brain', label: '🧠 생각해 (10)' },
           ].map((tab) => (
             <button
               key={tab.key}

@@ -320,17 +320,5 @@ export const GAMES_CATALOG: MiniGameMeta[] = [
     durationSec: 20,
     iconName: 'MessageSquare',
   },
-  {
-    id: 'trivia-quiz',
-    number: '27',
-    title: '상식 퀴즈',
-    subtitle: '제한 시간 동안 상식 퀴즈를 많이 맞히세요!',
-    heroEmoji: '💡',
-    rules: ['출제되는 상식 문제의 정답을 선택하세요', '맞힐 때마다 +20점, 틀리면 -10점입니다', '다양한 분야의 상식을 총동원해 보세요'],
-    category: 'brain',
-    accent: 'amber',
-    durationSec: 20,
-    iconName: 'Lightbulb',
-    isNew: true,
-  },
+ 
 ];
