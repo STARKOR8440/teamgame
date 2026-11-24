@@ -14,7 +14,7 @@ export type AccentColor =
 
 export interface MiniGameMeta {
   id: string;
-  number: string; // '01' ~ '27'
+  number: string;
   title: string;
   subtitle: string;
   heroEmoji: string;
@@ -38,7 +38,14 @@ export interface Player {
   finished?: boolean;
 }
 
-export type RoomPhase = 'lobby' | 'select' | 'briefing' | 'playing' | 'round_result' | 'podium';
+export type RoomPhase =
+  | 'lobby'
+  | 'select'
+  | 'briefing'
+  | 'countdown'
+  | 'playing'
+  | 'round_result'
+  | 'podium';
 
 export interface RoomState {
   roomCode: string;
@@ -48,6 +55,7 @@ export interface RoomState {
   playlist: string[];
   currentIndex: number;
   activeGameId: string | null;
+  countdownStartTime?: number;
   roundStartTime: number;
   players: Record<string, Player>;
 }
